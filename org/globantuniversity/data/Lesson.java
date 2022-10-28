@@ -38,12 +38,37 @@ public class Lesson {
     }
 
 public String students(){
-        String str ="";
-        for(Student f: studentList){{
-            str+= f ;
+        String list ="";
+        for(Student student: studentList){{
+            list+= student;
         }}
-    return str;
+    return list;
 }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setClassroom(String classroom) {
+        this.classroom = classroom;
+    }
+
+    public void setStudentList(List<Student> studentList) {
+        this.studentList = studentList;
+    }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
+    }
+    public Student getStudentById(int id) {
+        Student result = null;
+        for (Student student : studentList) {
+            if (student.getId() == id) {
+                result = student;
+            }
+        }
+        return result;
+    }
 
     @Override
     public String toString() {
