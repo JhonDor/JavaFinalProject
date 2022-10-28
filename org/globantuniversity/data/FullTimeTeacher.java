@@ -17,11 +17,9 @@ public class FullTimeTeacher extends Teacher {
 
     @Override
     public String toString() {
-        return "FullTimeTeacher{" +
-                "yearsOfExperience=" + yearsOfExperience +
-                ", name='" + name + '\'' +
-                ", baseSalary=" + baseSalary +
-                ", id=" + id +
-                '}';
+        return "Id: " + this.id + ", " + "Cargo: Profesor@ a tiempo completo" + ", " +
+                "Años de experiencia: " + this.yearsOfExperience + ", " +
+                "Nombre completo: " + this.name + ", " +
+                "Salario : " + String.format("%.3f", this.salary());
     }
 }

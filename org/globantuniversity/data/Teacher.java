@@ -3,8 +3,9 @@ package org.globantuniversity.data;
 public abstract class Teacher {
     protected String name;
     protected double baseSalary;
-    protected int id;
+
     protected static int idCounter = 1;
+    protected int id;
 
     public Teacher(String name, double baseSalary) {
         this.name = name;
@@ -15,6 +16,10 @@ public abstract class Teacher {
     }
 
     public abstract double salary();
+
+    public int getId() {
+        return id;
+    }
 
     @Override
     public String toString() {
