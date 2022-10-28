@@ -39,15 +39,14 @@ public class DataInitializer {
     }
 
     private static void loadLessonsIntoUniversity(University university) {
-        Lesson lesson1 = new Lesson("Calculus", "101", university.getTeacherById(2));
-        Lesson lesson2 = new Lesson("Physics", "101", university.getTeacherById(2));
-        Lesson lesson3 = new Lesson("Sciences", "101", university.getTeacherById(2));
-        Lesson lesson4 = new Lesson("Stadistics", "101", university.getTeacherById(2));
+        Lesson lesson1 = new Lesson("Calculo", "101", university.getTeacherById(1));
+        Lesson lesson2 = new Lesson("Física", "102", university.getTeacherById(2));
+        Lesson lesson3 = new Lesson("Química", "103", university.getTeacherById(3));
+        Lesson lesson4 = new Lesson("Estadistica", "104", university.getTeacherById(4));
         lesson1.addStudent(university.getStudentById(1));
-        lesson1.addStudent(university.getStudentById(1));
-        lesson1.addStudent(university.getStudentById(1));
+        lesson1.addStudent(university.getStudentById(2));
+        lesson1.addStudent(university.getStudentById(3));
         lesson2.addStudent(university.getStudentById(1));
-        /**
         lesson2.addStudent(university.getStudentById(2));
         lesson2.addStudent(university.getStudentById(3));
         lesson3.addStudent(university.getStudentById(4));
@@ -56,7 +55,6 @@ public class DataInitializer {
         lesson4.addStudent(university.getStudentById(4));
         lesson4.addStudent(university.getStudentById(5));
         lesson4.addStudent(university.getStudentById(6));
-         **/
         university.registerLesson(lesson1);
         university.registerLesson(lesson2);
         university.registerLesson(lesson3);

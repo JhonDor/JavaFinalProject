@@ -57,6 +57,9 @@ public class University {
     public int getTeachersAmount() {
         return teacherList.size();
     }
+    public Teacher getTeacherByIndex(int i) {
+        return teacherList.get(i);
+    }
 
     public Lesson getLessonByIndex(int i) {
         return lessonList.get(i);
@@ -76,13 +79,16 @@ public class University {
         return lessonList.size();
     }
 
-    public String FindStudentLesson(int id) {
-        for(Lesson lesson: this.lessonList){
-            if(lesson.getStudentList().contains(id)){
-                return lesson.getName();
+    public ArrayList<Lesson> FindStudentLessons(int id) {
+        ArrayList<Lesson> enrolledLessons = new ArrayList<>();
+
+        for (Lesson lesson : this.lessonList) {
+            boolean studentFound = lesson.getStudentList().contains(getStudentById(id));
+            if (studentFound == true & getStudentById(id) != null) {
+                enrolledLessons.add(lesson);
             }
         }
-        return null;
-    }
+        return enrolledLessons;
 
+    }
 }
