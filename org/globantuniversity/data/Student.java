@@ -1,5 +1,14 @@
 package org.globantuniversity.data;
 
+/**
+ * @author jhon.dorado@globant.com
+ * @version 1.00.00
+ * @since 1.00.00
+ * name is the name of the student
+ * age is the age of the student
+ * id is the id of the student
+ * idCounter is a counter that will be used to create automatically the student´s id
+ */
 public class Student {
     private String name;
     private int age;

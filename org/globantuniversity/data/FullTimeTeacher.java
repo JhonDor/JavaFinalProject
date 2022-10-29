@@ -1,5 +1,12 @@
 package org.globantuniversity.data;
 
+/**
+ * @author jhon.dorado@globant.com
+ * @version 1.00.00
+ * @since 1.00.00
+ * this is the class used to create full time teachers it extends the abstract class teacher
+ * yearsOfExperience is the amount of years of experience the teacher has
+ */
 public class FullTimeTeacher extends Teacher {
     private int yearsOfExperience;
 
@@ -8,6 +15,13 @@ public class FullTimeTeacher extends Teacher {
         this.yearsOfExperience = yearsOfExperience;
     }
 
+    /**
+     * this method calculates the salary of a full time teacher
+     * @author jhon.dorado@globant.com
+     * @version 1.00.00
+     * @since 1.00.00
+     * @return the salary of a full time teacher
+     */
 
     @Override
     public double salary() {

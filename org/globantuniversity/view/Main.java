@@ -5,7 +5,6 @@ import org.globantuniversity.data.Student;
 import org.globantuniversity.data.Teacher;
 import org.globantuniversity.data.University;
 import org.globantuniversity.persistence.DataInitializer;
-
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -25,8 +24,6 @@ public class Main {
             System.out.println("   5. Mostrar todas los cursos de un estudiante");
             System.out.println("   6. Salir");
             try {
-
-
                 String option = scan.nextLine();
                 scan = new Scanner(System.in);
                 switch (option) {
@@ -59,7 +56,13 @@ public class Main {
         }
     }
 
-
+    /**
+     * @author jhon.dorado@globant.com
+     * @version 1.00.00
+     * @since 1.00.00
+     * this method prints all the teachers in the university
+     *
+     */
     public static void printTeacherList(University university) {
         if (university.getTeachersAmount() == 0) {
             System.out.println("No hay profesores registrados en el sistema");
@@ -70,6 +73,12 @@ public class Main {
         }
     }
 
+    /**
+     * this method is used to print all the lessons in the university
+     * @author jhon.dorado@globant.com
+     * @version 1.00.00
+     * @since 1.00.00
+     */
     public static void printAllLessons(University university) {
         System.out.println("Las clases disponibles actualmente son: " + "\n");
         for (int i = 0; i < university.getLessonsAmount(); i++) {
@@ -97,11 +106,16 @@ public class Main {
 
     }
 
-    public static void printLessonDetails(University university) {
+    /** this method prints all the information of a given lesson
+     * @author jhon.dorado@globant.com
+     * @version 1.00.00
+     * @since 1.00.00
+     */
+    public static void printLessonDetails(University myUniversity) {
         Scanner scan = new Scanner(System.in);
         System.out.println("Escriba el id del curso para listar su información");
         int id = scan.nextInt();
-        Lesson lesson = university.getLessonById(id);
+        Lesson lesson = myUniversity.getLessonById(id);
         if (lesson != null) {
             System.out.println(lesson);
         } else {
@@ -110,6 +124,12 @@ public class Main {
 
     }
 
+    /**
+     * this method creates a new student
+     * @author jhon.dorado@globant.com
+     * @version 1.00.00
+     * @since 1.00.00
+     */
     public static void registerStudent(University university) {
         System.out.println("Ingrese el nombre del nuevo estudiante");
         Scanner scan = new Scanner(System.in);
@@ -131,6 +151,13 @@ public class Main {
         }
     }
 
+    /**
+     * * this method creates a new lesson, then a second method is used to add students to those lessons but those lessons can be left without students
+     * @author jhon.dorado@globant.com
+     * @version 1.00.00
+     * @since 1.00.00
+
+     */
     public static void createLesson(University university) {
         Scanner scan = new Scanner(System.in);
         System.out.println("Ingrese el nombre de la nueva clase");
@@ -149,11 +176,14 @@ public class Main {
         } else {
             System.out.println("Por favor verifique el id del profesor");
         }
-        ;
-
-
     }
 
+    /**
+     * this method adds a student to a lesson given
+     * @author jhon.dorado@globant.com
+     * @version 1.00.00
+     * @since 1.00.00
+     */
     public static void addStudentToLesson(University university, Lesson lesson) {
         Scanner scan = new Scanner(System.in);
         boolean exit = false;
@@ -184,6 +214,12 @@ public class Main {
         } while (!exit);
     }
 
+    /**
+     * @author jhon.dorado@globant.com
+     * @version 1.00.00
+     * @since 1.00.00
+     * this method prints all the lessons that contain a student with a given id
+     */
     public static void lessonsEnrolledByStudent(University university) {
         System.out.println("Escriba el id del estudiante para buscar todos los cursos en los cuales se encuentra inscrito");
         Scanner scan = new Scanner(System.in);

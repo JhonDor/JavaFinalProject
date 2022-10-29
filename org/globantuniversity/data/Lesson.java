@@ -2,8 +2,18 @@ package org.globantuniversity.data;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Spliterator;
 
+/**
+ * @author jhon.dorado@globant.com
+ * @version 1.00.00
+ * @since 1.00.00
+ * name is the name of the lesson
+ * classroom is the classroom assigned to the lesson
+ * studentList is the list of students assigned to the lesson
+ * teacher is the teacher assigned to the lesson
+ * id is the id of the lesson, will be used to find a given lesson
+ * idCounter is a counter to create the lesson´s id automatically
+ */
 public class Lesson {
     private String name;
     private String classroom;
@@ -21,6 +31,13 @@ public class Lesson {
         idCounter++;
     }
 
+    /**
+     * @author jhon.dorado@globant.com
+     * @version 1.00.00
+     * @since 1.00.00
+     * this method is used to add a student to list of students
+     * @param student is the student you will add to the list of students in the lesson
+     */
     public void addStudent(Student student) {
         this.studentList.add(student);
     }
@@ -37,14 +54,28 @@ public class Lesson {
         return studentList;
     }
 
-public String students(){
-        String list ="";
-        for(Student student: studentList){{
-            list+= student;
-        }}
-    return list;
-}
+    /**
+     * @author jhon.dorado@globant.com
+     * @version 1.00.00
+     * @since 1.00.00
+     * this method is used in the method toString, it transforms studentList into a string and makes the printing easier
+     * @return the list of students as a string
+     */
+    public String students() {
+        String list = "";
+        for (Student student : studentList) {
+            {
+                list += student;
+            }
+        }
+        return list;
+    }
 
+    /**
+     * this method finds a student inside a lesson using the student´s id
+     * @param id is the id of the student
+     * @return the student that matching the id provided or null if there is no matching id
+     */
     public Student getStudentById(int id) {
         Student result = null;
         for (Student student : studentList) {
