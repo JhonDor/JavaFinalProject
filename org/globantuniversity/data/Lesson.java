@@ -45,21 +45,6 @@ public String students(){
     return list;
 }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setClassroom(String classroom) {
-        this.classroom = classroom;
-    }
-
-    public void setStudentList(List<Student> studentList) {
-        this.studentList = studentList;
-    }
-
-    public void setTeacher(Teacher teacher) {
-        this.teacher = teacher;
-    }
     public Student getStudentById(int id) {
         Student result = null;
         for (Student student : studentList) {
@@ -73,8 +58,8 @@ public String students(){
     @Override
     public String toString() {
         return
-                "Código de clase: " + this.id + " " + "Nombre de la clase: " + this.name + " " +
-                        "Salón: " + this.classroom + " " +
+                "Código de clase: " + this.id + "\n" + "Nombre de la clase: " + this.name + "\n" +
+                        "Salón: " + this.classroom + "\n" +
                         "Profesor asignado: " + this.teacher + "\n" +
                         "Listado de estudiantes" + "\n" + students();
     }

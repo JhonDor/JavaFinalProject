@@ -1,4 +1,4 @@
-package org.globantuniversity.main;
+package org.globantuniversity.view;
 
 import org.globantuniversity.data.Lesson;
 import org.globantuniversity.data.Student;
@@ -61,8 +61,12 @@ public class Main {
 
 
     public static void printTeacherList(University university) {
-        for (int i = 0; i < university.getTeachersAmount(); i++) {
-            System.out.println(university.getTeacherByIndex(i));
+        if (university.getTeachersAmount() == 0) {
+            System.out.println("No hay profesores registrados en el sistema");
+        } else {
+            for (int i = 0; i < university.getTeachersAmount(); i++) {
+                System.out.println(university.getTeacherByIndex(i));
+            }
         }
     }
 
@@ -97,10 +101,10 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         System.out.println("Escriba el id del curso para listar su información");
         int id = scan.nextInt();
-        Lesson lesson =university.getLessonById(id);
-        if(lesson != null){
+        Lesson lesson = university.getLessonById(id);
+        if (lesson != null) {
             System.out.println(lesson);
-        }else{
+        } else {
             System.out.println("Por favor verifique el id del curso");
         }
 
@@ -116,11 +120,15 @@ public class Main {
         System.out.println("Escriba el id de la clase donde dese añadir al nuevo estudiante");
         scan = new Scanner(System.in);
         int lessonId = scan.nextInt();
+        Lesson lesson = university.getLessonById(lessonId) ;
 
-        Student student = new Student(name, age);
-        university.getLessonById(lessonId).addStudent(student);
-
-        System.out.println("El estudiante ha sido matriculado en la siguiente clase: " + university.getLessonById(lessonId));
+        if ( lesson != null) {
+            Student student = new Student(name, age);
+            lesson.addStudent(student);
+            System.out.println("El estudiante ha sido matriculado en la clase Id: "+ lesson.getId() + " " + lesson.getName());
+        } else {
+            System.out.println("Ha ocurrido un error, por favor verifique el id de la clase");
+        }
     }
 
     public static void createLesson(University university) {
@@ -187,7 +195,7 @@ public class Main {
                 System.out.println(lessons.get(i).getName());
             }
         } else {
-            System.out.println("ha ocurrido un error, por favor verifique el id del estudiante");
+            System.out.println("Ha ocurrido un error, por favor verifique el id del estudiante");
         }
 
     }
