@@ -61,7 +61,7 @@ public class Lesson {
      * this method is used in the method toString, it transforms studentList into a string and makes the printing easier
      * @return the list of students as a string
      */
-    public String students() {
+    public String printStudents() {
         String list = "";
         for (Student student : studentList) {
             {
@@ -92,7 +92,7 @@ public class Lesson {
                 "Código de clase: " + this.id + "\n" + "Nombre de la clase: " + this.name + "\n" +
                         "Salón: " + this.classroom + "\n" +
                         "Profesor asignado: " + this.teacher + "\n" +
-                        "Listado de estudiantes" + "\n" + students();
+                        "Listado de estudiantes" + "\n" + printStudents();
     }
 
 }
