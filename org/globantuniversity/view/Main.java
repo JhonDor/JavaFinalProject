@@ -179,7 +179,7 @@ public class Main {
     }
 
     /**
-     * this method adds a student to a lesson given
+     * this method adds a student to a lesson given, before adding them it verifies id the student is already registered in the lesson given
      * @author jhon.dorado@globant.com
      * @version 1.00.00
      * @since 1.00.00
@@ -197,9 +197,10 @@ public class Main {
                     System.out.println("Escriba el id del estudiante que desea agregar");
                     int studentId = scan.nextInt();
                     Student student = university.getStudentById(studentId);
-                    if (student != null) {
+                    boolean verifyStudent = lesson.checkIfStudentIsInLesson(studentId);
+                    if (student != null && !verifyStudent) {
                         lesson.addStudent(student);
-                        System.out.println("Usted agreago a " + lesson.getStudentById(studentId).getName() + " a la clase");
+                        System.out.println("Usted agrego a " + lesson.getStudentById(studentId).getName() + " a la clase");
                     } else {
                         System.out.println("No se pudo agregar el estudiante, verifique el id del estudiante");
                     }

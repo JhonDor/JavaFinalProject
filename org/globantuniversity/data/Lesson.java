@@ -85,6 +85,20 @@ public class Lesson {
         }
         return result;
     }
+    /**
+     * this method verifies if the student is already registered in the lesson
+     * @param id is the id of the student
+     * @return true if the student is already registered in the lesson or false if isn´t
+     */
+    public boolean checkIfStudentIsInLesson(int id){
+        boolean result = false;
+        if(studentList.contains(getStudentById(id))){
+            result = true;
+        }
+
+        return result;
+    }
+
 
     @Override
     public String toString() {
